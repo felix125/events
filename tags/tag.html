@@ -62,7 +62,7 @@ The purpose of this snippet is to list all your posts posted with a certain tag.
 
     {% for post in site.posts %}
         {% if post.tags contains tag %}
-            <a href="{{ post.url }}" style="text-decoration:none;color:#003D79">
+            <a href="{{ post.url | prepend: site.baseurl }}" style="text-decoration:none;color:#003D79">
                 {{ post.title }},
                 <small>{{ post.date | date_to_string }}</small>
             </a>
@@ -72,7 +72,7 @@ The purpose of this snippet is to list all your posts posted with a certain tag.
 
     {% for page in site.pages %}
         {% if page.tags contains tag %}
-            <a href="{{ page.url }}" style="text-decoration:none;color:#003D79">
+            <a href="{{ page.url | prepend: site.baseurl }}" style="text-decoration:none;color:#003D79">
                 {{ page.title }},
                 <small>{{ post.date | date_to_string }}</small>
             </a>
